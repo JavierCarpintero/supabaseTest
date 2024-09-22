@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JkAS Admin Page</title>
+    <link rel="stylesheet" href="./style/style_01.css">
+</head>
+<body>
+    <header>
+        <img src="./style/assets/logo.svg" class="headerItem">
+        <div>
+            <button class="headerButton">stock</button>
+            <button class="headerButton">balance</button>
+            <button class="headerButton">workers</button>
+        </div>
+    </header>
+
+    <div class="tableHeader"> 
+        <select id="type" class="column selector"> 
+            <option value="*">everything</option>
+            <option value="t-shirt">t-shirts</option>
+            <option value="hoodie">hoodies</option>
+            <option value="pants">pants</option>
+            <option value="jacker">jackets</option>
+        </select>
+        <div class="column"> brand </div>
+        <div class="column"> size </div>
+        <div class="column"> condition </div>
+        <input type="text" id="search" name="search" class="search">
+    </div>
+
+    <div id="final" class="row"> </div>
+</body>
+<script type="module" src="./javascript/main.js"></script>
+</html>

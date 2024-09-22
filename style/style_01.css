@@ -1,0 +1,123 @@
+@import url('https://fonts.googleapis.com/css2?family=Cutive+Mono&display=swap');
+
+body{
+    background-color: #292929;
+    color: rgb(112, 112, 112);
+
+    font-family: "Cutive Mono", monospace;
+    font-weight: 400;
+    font-style: normal;
+    font-size: 16px;
+}
+
+header{
+    background-color: #292929;
+
+    position: sticky;
+    top: 0px;
+
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    justify-content: space-between;
+    align-items: center;
+
+    padding: 10px;
+}
+
+.editButton{
+    color: white;
+    background-color: transparent;
+
+    height: 20px; 
+
+    border: none;
+
+    margin-left: auto;
+
+    font-family: "Cutive Mono", monospace;
+    font-weight: 400;
+    font-style: normal;
+    font-size: 16px;
+}
+
+.editButton:hover{
+    color: grey;
+    background-color: transparent;
+}
+
+.tableHeader{
+    background-color: #292929;
+    color: rgb(255, 255, 255);
+
+    position: sticky;
+    top: 70px;
+
+    display:flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    align-items: center;
+
+    margin: 1%;
+    padding: 10px;
+}
+
+.row{
+    background-color: #292929;
+
+    display:flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    align-items: center;
+
+    margin: 1%;
+    padding: 10px;
+}
+
+.column{
+    width: 15%;
+}
+
+.headerItem{
+    filter: invert(100%) sepia(100%) saturate(0%) hue-rotate(214deg) brightness(105%) contrast(102%); /*  https://codepen.io/sosuke/pen/Pjoqqp  */
+    height: 30px;
+
+    flex: none;
+    flex-grow: 0;
+
+    padding: 10px;
+}
+
+button.headerButton{
+    color: white;
+    background-color: transparent;
+
+    border: none;
+
+    font-family: "Cutive Mono", monospace;
+    font-weight: 400;
+    font-style: normal;
+    font-size: 16px;
+}
+
+button.headerButton:hover{
+    color: grey;
+    background-color: transparent;
+
+    border: none;
+}
+
+.search{
+    border-radius: 5px;
+    border: none;
+
+    margin-left: auto;
+}
+
+.selector{
+    color: white;
+    background-color: #292929;
+
+    border: none;
+    -webkit-appearance:none;
+}
