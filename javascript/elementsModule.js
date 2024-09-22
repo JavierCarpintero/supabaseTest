@@ -47,4 +47,33 @@ function addRow(row) {
     document.body.insertBefore(newDiv, currentDiv);
 }
 
-export { addBasic, addRow }
+function addStoreRow(row) {
+    const a = document.createElement("a");
+    a.appendChild(link);
+    a.classList.add("linkButton");
+    const img = document.createElement("img");
+    img.setAttribute('src', 'style\\assets\\openWeb.svg')
+    img.appendChild(link); 
+    img.classList.add("svgButton");
+    const newDiv = document.createElement("div"); 
+    newDiv.appendChild(link); 
+    newDiv.classList.add("row")
+
+    for(let i=0; i<row.length; i++){
+        const newColumn = document.createElement("div");
+        const newContent = document.createTextNode(row[i]);
+        newColumn.appendChild(link);
+        newColumn.classList.add("column")
+        newColumn.appendChild(newContent);
+        newDiv.appendChild(newColumn);
+
+        a.setAttribute('href', row[2]);
+    }
+
+    a.appendChild(img);
+    newDiv.appendChild(a);
+    const currentDiv = document.getElementById("final");
+    document.body.insertBefore(newDiv, currentDiv);
+}
+
+export { addBasic, addRow, addStoreRow }

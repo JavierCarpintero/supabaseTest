@@ -3,34 +3,30 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>JkAS Admin Page</title>
+    <title>JKs Vault</title>
     <link rel="stylesheet" href="./style/style_01.css">
 </head>
 <body>
-    <header>
-        <img src="./style/assets/logo.svg" class="headerItem">
-        <div>
-            <button class="headerButton">stock</button>
-            <button class="headerButton">balance</button>
-            <button class="headerButton">workers</button>
-        </div>
-    </header>
-
-    <div class="tableHeader"> 
-        <select id="type" class="column selector"> 
-            <option value="*">everything</option>
-            <option value="t-shirt">t-shirts</option>
-            <option value="hoodie">hoodies</option>
-            <option value="pants">pants</option>
-            <option value="jacker">jackets</option>
-        </select>
-        <div class="column"> brand </div>
-        <div class="column"> size </div>
-        <div class="column"> condition </div>
-        <input type="text" id="search" name="search" class="search">
+    <div class="menu">
+        <p class="headerButton">- JKs Vault -</p>
+        <a class="headerButton" href="http://localhost/supabasetest/shop.html">shop</a>
+        <a class="headerButton" href="http://localhost/supabasetest/database.html">database</a>
+        <a class="headerButton" href="http://localhost/supabasetest/portfolio.html">portfolio</a>
+        <button id="signInButton" class="headerButton">Sign-In as Admin</button>
     </div>
 
-    <div id="final" class="row"> </div>
+    <div id="myModal" class="modal">
+        <div class="signInModal-content">
+            <span class="close">&times;</span>
+            <form action="/action_page.php">
+                <label for="fname">Username:</label>
+                <input type="text" id="fname" name="fname"><br><br>
+                <label for="lname">Password:</label>
+                <input type="text" id="lname" name="lname"><br><br>
+                <input type="submit" value="Submit" class="submitButton">
+            </form>
+        </div> 
+    </div>
 </body>
-<script type="module" src="./javascript/main.js"></script>
+<script type="module" src="./javascript/index.js"></script>
 </html>
