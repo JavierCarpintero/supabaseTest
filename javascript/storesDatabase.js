@@ -10,7 +10,7 @@ const { data, error } = await supabase
     .select()
 
 for (let i = 0; i < data.length; i++) {
-    const row = [data[i].name, data[i].country, data[i].url]
+    const row = [data[i].name, data[i].country ,data[i].url]
     create.addStoreRow(row)
 }
 
