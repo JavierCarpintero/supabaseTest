@@ -4,28 +4,41 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Teo's Vault</title>
+    <link rel="icon" type="image/x-icon" href="./style/assets/base-de-datos.ico">
     <link rel="stylesheet" href="./style/style_01.css">
 </head>
+
 <body>
     <div class="menu">
-        <p class="headerButton">- Teo's Vault -</p>
-        <a class="headerButton" href="brands.html">brands</a>
-        <a class="headerButton" href="stores.html">stores</a>
-        <button id="signInButton" class="headerButton">Sign-In as Admin</button>
+        <p class="headerButton" style="font-size: 22px;">- Teo's Vault -</p>
+        <a class="headerButton" href="brands.html">Brands</a>
+        <a class="headerButton" href="stores.html">Stores</a>
+        <a class="headerButton" href="about.html">What is Teo's Vault?</a>
+        <button id="signInButton" class="headerButton">LogIn as Admin</button>
     </div>
 
     <div id="myModal" class="modal">
         <div class="signInModal-content">
-            <span class="close">&times;</span>
-            <form action="/action_page.php">
-                <label for="fname">Username:</label>
-                <input type="text" id="fname" name="fname"><br><br>
-                <label for="lname">Password:</label>
-                <input type="text" id="lname" name="lname"><br><br>
-                <input type="submit" value="Submit" class="submitButton">
-            </form>
-        </div> 
+            <div>
+                <p style="font-size: 22px;">LOGIN</p>
+            </div>
+            <div>
+                <p>Username:</p>
+                <input type="text" id="email" name="email"><br><br>
+            </div>
+            <div>
+                <p>Password:</p>
+                <input type="password" id="password" name="password"><br><br>
+            </div>
+            <div><p id="errorMessage" style="display:none">Your password or email are incorrect</p></div>
+            <div style="margin-top: 20px;">
+                <button id="submit" class="modalButton">SUBMIT</button>
+                <span class="close modalButton">CLOSE</span>
+            </div>
+        </div>
     </div>
 </body>
+
 <script type="module" src="./javascript/index.js"></script>
+<script type="module" src="./javascript/login.js"></script>
 </html>

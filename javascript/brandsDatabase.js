@@ -11,7 +11,7 @@ const { data, error } = await supabase
 
 for (let i = 0; i < data.length; i++) {
     const row = [data[i].name, data[i].url]
-    create.addStoreRow(row)
+    create.addBrandRow(row, 1)
 }
 
 // MODAL

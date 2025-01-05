@@ -7,19 +7,21 @@
     <link rel="stylesheet" href="./style/style_01.css">
 </head>
 <body>
-    <header>
-        <a class="headerButton" href="index.html">Teo's Vault / stores</a>
-        <div>
-            <a class="headerButton" href="brands.html">brands</a>
-            <a class="headerButton" href="culture.html">culture</a>
-        </div>
-    </header>
+    <div class="top">
+        <header>
+            <a class="headerButton" href="index.html">Teo's Vault / stores</a>
+            <div>
+                <a class="headerButton" href="brands.html">brands</a>
+                <a class="headerButton" href="culture.html">culture</a>
+            </div>
+        </header>
 
-    <div class="tableHeader"> 
-        <div class="column"> name </div>
-        <div class="column"> country </div>
-        <div class="column"> url </div>
-        <button id="filterButton" class="filterButton">Filter</button>
+        <div class="tableHeader"> 
+            <div class="column"> name </div>
+            <div class="column"> country </div>
+            <div class="column"> url </div>
+            <button id="filterButton" class="filterButton">Filter</button>
+        </div>
     </div>
 
     <div id="myModal" class="modal">
@@ -39,4 +41,5 @@
     <div id="final" class="row"> </div>
 </body>
 <script type="module" src="./javascript/storesDatabase.js"></script>
+<script type="module" src="./javascript/login.js"></script>
 </html>
