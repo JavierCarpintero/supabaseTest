@@ -16,6 +16,7 @@ async function signInWithEmail(email, password) {
 
         sessionStorage.setItem("email", email)
         sessionStorage.setItem("password", password)
+        sessionStorage.setItem("logged", true)
     }else{
         console.log("Wrong email or password")
         document.getElementById("password").value = ""
@@ -23,17 +24,25 @@ async function signInWithEmail(email, password) {
     }
 }
 
+async function signOut() {
+    const { error } = await supabase.auth.signOut()
+    sessionStorage.setItem("email", "")
+    sessionStorage.setItem("password", "")
+    sessionStorage.setItem("logged", false)
+}  
+
 function loginAsAdmin(){
     let email = document.getElementById("email").value
     let password = document.getElementById("password").value
 
-    // console.log("Hola, " + sessionStorage.getItem("email") + " tu contraseña es: " + sessionStorage.getItem("password"))
-
     signInWithEmail(email, password)
+}
 
-
+function logOut(){
+    signOut()
 }
 
 document.getElementById("submit").addEventListener("click", loginAsAdmin)
+document.getElementById("logout").addEventListener("click", logOut)
 
 

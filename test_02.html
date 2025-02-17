@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+  <!--
+   @license
+   Copyright 2023 Google LLC. All Rights Reserved.
+   SPDX-License-Identifier: Apache-2.0
+  -->
+  <html>
+    <head>
+      <title>Aerial View</title>
+      <style>
+        /**
+         * @license
+         * Copyright 2023 Google LLC. All Rights Reserved.
+         * SPDX-License-Identifier: Apache-2.0
+         */
+        html,
+        body {
+          align-items: center;
+          display: flex;
+          height: 100%;
+          width: 100%;
+          justify-content: center;
+        }
+
+        .aerial-view-media {
+          object-fit: contain;
+          height: 100%;
+          width: 100%;
+        }
+
+        .container {
+          display: flex;
+          overflow: hidden;
+          position: relative;
+          align-items: center;
+          justify-content: center;
+          width: 100%;
+          height: 100%;
+          max-height: 780px;
+          max-width: 780px;
+        }
+      </style>
+    </head>
+    <body>
+      <div class="container">
+        <video class="aerial-view-media" muted autoplay loop>
+          Your browser does not support HTML5 video.
+        </video>
+      </div>
+    </body>
+    <script>
+      /**
+       * @license
+       * Copyright 2023 Google LLC. All Rights Reserved.
+       * SPDX-License-Identifier: Apache-2.0
+       */
+      // To use video ID as parameter input instead of address, replace parameter value with a videoID '-wVXGP6Hkogfqz6sZulUf3'.
+      const PARAMETER_VALUE = 'Newark, Nueva Jersey 07112';
+      const API_KEY = 'AIzaSyAjGVYW6FvE-e0Oj5iPctsnI6d31oeKxf0';
+
+      async function initAerialView() {
+        const displayEl = document.querySelector('video');
+        displayEl.addEventListener('click', function () {
+          if (displayEl.paused) {
+          displayEl.play();
+          } else {
+            displayEl.pause();
+          }
+        });
+
+        // Parameter key can accept either 'videoId' or 'address' depending on input.
+        const parameterKey = videoIdOrAddress(PARAMETER_VALUE);
+        const renderUrlParameter = new URLSearchParams();
+        const lookUpUrlParameter = new URLSearchParams();
+        renderUrlParameter.set('key', API_KEY)
+        lookUpUrlParameter.set(parameterKey, PARAMETER_VALUE);
+        lookUpUrlParameter.set('key', API_KEY);
+        const response_render = await fetch(`https://aerialview.googleapis.com/v1/videos:renderVideo?${renderUrlParameter.toString()}`);
+        const response_lookup = await fetch(`https://aerialview.googleapis.com/v1/videos:lookupVideo?${lookUpUrlParameter.toString()}`, {
+            method: 'POST',
+            body: PARAMETER_VALUE,
+        });
+
+        const videoResult = await response_lookup.json();
+
+        if (videoResult.state === 'PROCESSING') {
+          alert('Video still processing..');
+        } else if (videoResult.error && videoResult.error.code === 404) {
+          alert('Video not found. To generate video for an address, call on Aerial view renderVideo method.');
+        } else {
+          displayEl.src = videoResult.uris.MP4_MEDIUM.landscapeUri
+        }
+      }
+
+      function videoIdOrAddress(value) {
+        const videoIdRegex = /[0-9a-zA-Z-_]{22}/;
+        return value.match(videoIdRegex) ? 'videoId' : 'address';
+      }
+
+      initAerialView();
+    </script>
+  </html>

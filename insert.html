@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>THE WEAR CULT</title>
+    <link rel="icon" type="image/x-icon" href="./style/assets/untitled.ico">
+    <link rel="stylesheet" href="./style/style_01.css">
+</head>
+<body>
+    <div class="top">
+        <header>
+            <a class="headerButton" href="index.html">THE WEAR CULT / EDITION</a>
+            <div>
+                <a class="headerButton" href="brands.html">BRANDS</a>
+                <a class="headerButton"> - </a>
+                <a class="headerButton" href="stores.html">STORES</a>
+                <a class="headerButton"> - </a>
+                <a class="headerButton" href="culture.html">CULTURE</a>
+            </div>
+        </header>
+    </div>
+
+    <div id="insertForm" class="insertFormColumn" display="70%">
+        <p>WHAT DO YOU WANT TO ADD?</p>
+        <div>
+            <button id="formButton" class="formButton" data-value="brands">BRAND</button>
+            <button id="formButton" class="formButton" data-value="stores">STORE</button>
+            <button id="formButton" class="formButton" data-value="culture">CULTURE ITEM</button>
+        </div>
+
+        <div>
+            <hr class="formSeparator" style="width: 20%;">
+        </div>
+
+        <div id="brandForm" style="display: none;">
+            <p style="margin: 5px;">NAME</p>
+            <input type="text" id="brandName" name="brandName" placeholder="ex.'adidas'" class="insertFormInput" autocomplete="off">
+            <div class="insertFormRow" style="margin:20px 10px;"> 
+                <div style="padding: 5px;">
+                    <p style="margin: 5px;">FOUNDER</p>
+                    <input type="text" id="brandFounder" name="brandFounder" placeholder="ex.'Adi Dassler'" class="insertFormInput" autocomplete="off">
+                </div>
+                <div style="padding: 5px;"  >
+                    <p style="margin: 5px;">YEAR</p>
+                    <input type="text" id="brandYear" name="brandYear" placeholder="ex.'1949'" class="insertFormInput" autocomplete="off">
+                </div>
+            </div>
+            <p style="margin: 5px;">WEB PAGE (URL)</p>
+            <input type="text" id="brandUrl" name="brandUrl" placeholder="ex.'https://www.adidas.com'" class="insertFormInput" style="width: 300px;" autocomplete="off">
+            <p style="margin-top: 20px; margin-bottom: 5px;">DESCRIPTION</p>
+            <input type="text" id="brandDescription" name="brandDescription" placeholder="ex.'adidas is...'" class="insertFormInput" style="width: 450px; height: 75px;" autocomplete="off">
+            <hr class="formSeparator" style="width: 20%;">
+            <button id="brandInsert" class="formButton">- INSERT LINE -</button>
+        </div>
+
+        <div id="storeForm" style="display: none;">
+            <p style="margin: 5px;">NAME</p>
+            <input type="text" id="storeName" name="storeName" placeholder="ex.'SVD'" class="insertFormInput" autocomplete="off">
+            <div class="insertFormRow" style="margin:20px 10px;"> 
+                <div style="padding: 5px;">
+                    <p style="margin: 5px;">COUNTRY</p>
+                    <input type="text" id="storeCountry" name="storeCountry" placeholder="ex.'Spain'" class="insertFormInput" autocomplete="off">
+                </div>
+                <div style="padding: 5px;"  >
+                    <p style="margin: 5px;">LOCATION</p>
+                    <input type="text" id="storeLocation" name="storeLocation" placeholder="ex.'Madrid'" class="insertFormInput" autocomplete="off">
+                </div>
+            </div>
+            <p style="margin: 5px;">WEB PAGE (URL)</p>
+            <input type="text" id="storeUrl" name="storeUrl" placeholder="ex.'https://www.svd.com'" class="insertFormInput" style="width: 300px;" autocomplete="off">
+            <hr class="formSeparator" style="width: 20%;">
+            <button id="storeInsert" class="formButton">- INSERT LINE -</button>
+        </div>
+
+        <div id="cultureForm" style="display: none;">
+            <p style="margin: 5px;">NAME</p>
+            <input type="text" id="itemName" name="itemName" placeholder="ex.'Fresh Dressed'" class="insertFormInput" autocomplete="off">
+            <div class="insertFormRow" style="margin:20px 10px;"> 
+                <div style="padding: 5px;">
+                    <p style="margin: 5px;">TYPE</p>
+                    <input type="text" id="itemType" name="itemType" placeholder="ex.'Documentary'" class="insertFormInput" autocomplete="off">
+                </div>
+                <div style="padding: 5px;"  >
+                    <p style="margin: 5px;">AUTHOR</p>
+                    <input type="text" id="itemAuthor" name="itemAuthor" placeholder="ex.'Sacha Jenkins'" class="insertFormInput" autocomplete="off">
+                </div>
+            </div>
+            <p style="margin: 5px;">DESCRIPTION</p>
+            <input type="text" id="itemDescription" name="itemDescription" placeholder="ex.'Fashion documentary about the history of Hip-Hop fashion.'" class="insertFormInput" style="width: 450px; height: 75px;" autocomplete="off">
+            <hr class="formSeparator" style="width: 20%;">
+            <button id="cultureInsert" class="formButton">- INSERT LINE -</button>
+        </div>
+    </div>
+
+    <div id="mainDiv"> </div>
+</body>
+<script type="module" src="./javascript/insert.js"></script>
+<!-- <script type="module" src="./javascript/login.js"></script> -->
+<!-- <script type="module" src="./javascript/getInfo.js"></script> -->
+</html>

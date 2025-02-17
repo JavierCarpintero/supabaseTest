@@ -3,18 +3,19 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Teo's Vault</title>
-    <link rel="icon" type="image/x-icon" href="./style/assets/base-de-datos.ico">
+    <title>THE WEAR CULT</title>
+    <link rel="icon" type="image/x-icon" href="./style/assets/untitled.ico">
     <link rel="stylesheet" href="./style/style_01.css">
 </head>
 
-<body>
+<body id="bg">
     <div class="menu">
-        <p class="headerButton" style="font-size: 22px;">- Teo's Vault -</p>
-        <a class="headerButton" href="brands.html">Brands</a>
-        <a class="headerButton" href="stores.html">Stores</a>
-        <a class="headerButton" href="about.html">What is Teo's Vault?</a>
-        <button id="signInButton" class="headerButton">LogIn as Admin</button>
+        <p style="font-size: 22px; font-weight: 500;">THE WEAR CULT</p>
+        <!-- <img src="style\assets\logo.png" width="300px"> -->
+        <a class="headerButton" href="brands.html">BRANDS</a>
+        <a class="headerButton" href="stores.html">STORES</a>
+        <a class="headerButton" href="culture.html">CULTURE</a>
+        <a class="headerButton" href="about.html">WHAT'S THE WEAR CULT?</a>
     </div>
 
     <div id="myModal" class="modal">
@@ -23,22 +24,29 @@
                 <p style="font-size: 22px;">LOGIN</p>
             </div>
             <div>
-                <p>Username:</p>
+                <p>USERNAME:</p>
                 <input type="text" id="email" name="email"><br><br>
             </div>
             <div>
-                <p>Password:</p>
+                <p>PASSWORD:</p>
                 <input type="password" id="password" name="password"><br><br>
             </div>
             <div><p id="errorMessage" style="display:none">Your password or email are incorrect</p></div>
             <div style="margin-top: 20px;">
                 <button id="submit" class="modalButton">SUBMIT</button>
+                <button id="logout" class="modalButton">LOG OUT</button>
                 <span class="close modalButton">CLOSE</span>
             </div>
         </div>
     </div>
 </body>
 
+<footer>
+    <button id="signInButton" class="footerButton">LogIn as Admin</button>
+    <a id="" class="footerButton" href="insert.html">Edit database</a>
+</footer>
+
+<script type="module" src="./javascript/bgChange.js"></script>
 <script type="module" src="./javascript/index.js"></script>
 <script type="module" src="./javascript/login.js"></script>
 </html>
