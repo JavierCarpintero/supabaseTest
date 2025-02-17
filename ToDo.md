@@ -1,5 +1,5 @@
-## TEO's VAULT
-# Tasks
+# THE WEAR CULT
+## Tasks
 
 - [x] Arreglar Modal
 - [x] Arreglar botón SUBMIT
